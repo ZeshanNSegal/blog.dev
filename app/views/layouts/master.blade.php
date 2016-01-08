@@ -11,10 +11,35 @@
     @yield('top-script')
 </head>
 <body>
+    <nav class="navbar navbar-default" id="navbar-example" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resume">My Resume</a></li>
+                    <li><a href="#abilities">Abilities</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
     @yield('content')
 
 
     {{-- script tags for jquery and bootstrap go above bottom script--}}
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/view/js/script.js"></script>
+    <script type="text/javascript" src="/view/js/bootstrap.min.js"></script>
     <script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/jquery.js"></script>
 	<script src="js/main.js"></script>
