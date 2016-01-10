@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('top-script')
-		<link rel="stylesheet" href="/css/blog.css">		
+	<link rel="stylesheet" href="/css/blog.css">		
 @stop
 
-@section('content')
-<header class="navbar-inverse" role="banner">
+	@section('content')
+	<header class="navbar-inverse" role="banner">
 			<div class="container">
 			<nav class="navigation">
 			  <div class="container-fluid">
@@ -44,8 +44,7 @@
 			</nav>
 			</div>	
 		</header>
-		
-
+	
 		<div class="container">
 			<div class="row">
 				<div class="darkBG col-sm-6 col-xs-12">test</div>
@@ -54,8 +53,9 @@
 			</div>		
 		</div>	
 
-@stop
+	@stop
 
 @section('bottom-script')
 
+@stop
 @stop
