@@ -1,3 +1,16 @@
+/*///////////master///////*/
+
+.footerLineBreak{
+	border-bottom: solid black 5px;
+    color: black;
+    border-radius: 10px;
+}
+
+
+.btn-default{
+	border: 3px solid black;
+}
+
 .name{
 	text-decoration: bold;
 	text-align: center;
@@ -21,21 +34,40 @@
 
 .experiences{
 	font-size: 20px;
-	background-color: #F3EFE0;
+	background-color: white;
     color: black;
 }
 
+hr{
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
 body{
-    background-color: #F3EFE0;
     color: black;
+}
+
+.titleBlog{
+	color: #F2460B;
+	font-size: 40px;
+}
+
+.aboutMe{
+	padding-left: 50px;
 }
 
 .titles{
 	color: #F2460B;
+	font-size: 40px;
+	font-weight: bold;
 }
 
 .skills{
 	padding-left: 40px;
+}
+
+#profile{
+	margin-left: 20px;
 }
 
 /*///////////////////////////////////////////*/
@@ -49,7 +81,7 @@ body{
 
 .pictureOpacity{
 	/*opacity: 0.8;*/
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.5);
 	position: absolute;
 	top: 0px;
 	left:0px;
@@ -65,37 +97,44 @@ body{
 }
 
 .bigZ{
-	color:white;
-	text-align: center;
-	font-size: 600px;
-	margin-left: 500px;
-	font-family: "Crimson Text", cursive;
-	/*text-shadow: 1px 1px #008302;*/
-}
-
-.mobileZ{
-	color:white;
-	text-align: center;
-	font-size: 600px;
-	margin-left: 0;
-	font-family: "Crimson Text", cursive;
-	/*text-shadow: 1px 1px #008302;*/
+	display: inline-block;
 }
 
 .bigSentInPic{
-	color:black;
-	text-align: center;
-	font-size: 55px;
+	color:white;
+	font-size: 40px;
 	display: inline-block;
+	z-index: 5;
 }
 
 .jumbotron.backgroundImg p {
     margin-bottom: 15px;
 }
-.fa {
+
+.faIcons{
 	font-size: 50px;
+	text-align: center;
 }
 
-.no-bullets{
-	list-style-type: none;
+li{
+	text-align: left;
+}
+
+.clear{
+	clear: both;
+}
+
+hr{
+	border-color: black;
+}
+
+
+/*////////////////////////////////////////*/
+
+.titleOfBlog{
+	border-bottom-style: solid;
+}
+
+.blogBody{
+	border-bottom-style: solid;
 }

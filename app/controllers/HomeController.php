@@ -27,7 +27,8 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('hello');
+		$posts = Post::orderBy('updated_at', 'desc')->take(3)->get();
+		return View::make('hello')->with('posts', $posts);
 	}
 
 }

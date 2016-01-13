@@ -2,16 +2,20 @@
 
 @section('content')
 
-<form method="POST" action="{{{ action('PostController@store') }}}">
-  <fieldset class="form-group">
-    <label for="blogTitle">Title</label>
-    <input name="title" type="text" class="form-control" id="blogTitle" placeholder="Enter some stuff" value="{{{ Input::old('title') }}}">
-  </fieldset>
-  <fieldset class="form-group">
-    <label for="blogTitle">Post Your Blog</label>
-    <textarea rows="4" cols="50" name="blogPost" class="form-control" id="blogTitle" placeholder="Enter some stuff">{{{ Input::old('blogPost') }}}</textarea>
-  </fieldset>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+{{ Form::open(array('action' => 'PostsController@store')) }}
+
+	{{ $errors->first('title', '<span class="help-block">:message</span>') }}
+
+	{{ Form::label('title', 'Title') }}
+	{{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Enter blog title']) }}
+
+  	{{ Form::label('body', 'Body') }}
+	{{ Form::text('body') }}
+
+ 	 <input name="user_id" type="hidden" value="1">
+
+  <button type="submit" class="btn btn-warning">Submit</button>
+
+{{ Form::close() }}
 
 @stop
