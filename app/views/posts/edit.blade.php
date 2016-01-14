@@ -2,20 +2,31 @@
 
 @section('content')
 
-{{ Form::open(array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
+<hr>
 
-{{ $errors->first('title', '<span class="help-block">:message</span>') }}
+<div class=('container-fluid')>
+	<div class=('row')>
+		<div class=('col-md-12 createPost')>
+			{{ Form::open(array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
 
-	{{ Form::label('title', 'Title') }}
-	{{ Form::text('title', $post->title, ['class' => 'form-control', 'placeholder' => 'Enter blog title']) }}
+				{{ $errors->first('title', '<span class="help-block">:message</span>') }}
 
-  	{{ Form::label('body', 'Body') }}
-	{{ Form::text('body', $post->body, ['class' => 'form-control', 'placeholder' => 'Enter blog title']) }}
+				{{ Form::label('title', 'Title') }}
+				{{ Form::text('title', $post->title, ['class' => 'form-control', 'placeholder' => 'Enter blog title']) }}
 
- 	 <input name="user_id" type="hidden" value="1">
+				{{ $errors->first('body', '<span class="help-block">:message</span>') }}
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+			  	{{ Form::label('body', 'Body') }}
+				{{ Form::text('body', $post->body, ['class' => 'form-control', 'placeholder' => 'Enter blog title']) }}
 
-{{ Form::close() }}
+			 	 <input name="user_id" type="hidden" value="1">
+
+			  <button type="submit" class="btn btn-primary">Submit</button>
+
+			{{ Form::close() }}
+		</div><!--end col-md-12-->
+	</div><!-- end row -->
+</div><!--end container-->
+
 
 @stop

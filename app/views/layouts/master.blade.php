@@ -14,7 +14,6 @@
     <!-- Bootstrap Core CSS -->
     <link href="/css/ionicons.min.css" rel="stylesheet">
     <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- Custom CSS -->
@@ -23,7 +22,7 @@
 
     <link rel="stylesheet" href="/css/blog.css"/>
 
-    @yield('top-script')
+@yield('top-script')
 </head>
 
 <body>
@@ -70,11 +69,18 @@
             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
         </div><!-- /#page-content-wrapper -->
     </div><!-- /#wrapper -->
-</div> <!-- end container-fluid-->        
-        
-    @yield('content')        
-     <hr class="footerLineBreak" />
-    <footer class="footer">
+</div> <!-- end container-fluid--> 
+
+    @if (Session::has('successMessage'))
+        <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
+    @endif
+    @if (Session::has('errorMessage'))
+        <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+    @endif        
+@yield('content') 
+
+<hr class="footerLineBreak" />
+<footer class="footer">
         <div class="row">
             <div class= "footer_container">
                 <div class="container faIcons col-md-12">
@@ -84,11 +90,9 @@
             <a href="http://linkedin.com/in/zeshan-segal-a987b569" target="_blank">
                 <span class="fa fa-linkedin-square"></span>            
             </a>
-
             <a href="https://github.com/ZeshanNSegal">
-                <span class="fa fa-github-square"></span>                       
+                <span class="fa fa-github-square"></span> 
             </a>
-
             <a href="mailto:zeshan.segal@gmail.com">
                 <span class="fa fa-envelope"></span>                
             </a>
@@ -105,7 +109,7 @@ $("#menu-toggle").click(function(e) {
     $("#wrapper").toggleClass("toggled");
 });
 </script>
-    @yield('bottom-script')
+@yield('bottom-script')
 
 </body>
 </html>

@@ -33,3 +33,16 @@ Route::get('orm-test', function ()
 	$post2->body  = 'The body for post number two.';
 	$post2->save();
 });
+
+// Route::get('/session/{value}', function($value){
+	
+// 	Session::put('some-key');
+
+// 	if(Session::has('some-key')) {
+// 		echo Session::get('some-key');
+// 	}
+// })
+
+// Route::get('/session', function(){
+// 	return Session::all();
+// });

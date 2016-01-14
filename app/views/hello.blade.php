@@ -5,8 +5,8 @@
 	<!-- Bootstrap core CSS -->
 	<link href="/css/ionicons.min.css" rel="stylesheet">
 	<link href="/css/bootstrap.css" rel="stylesheet">
-	<link href="/css/style.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link href="/css/simple-sidebar.css" rel="stylesheet">
 	<link rel="stylesheet" href="/css/blog.css"/>
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -34,7 +34,7 @@
 		<li>Laravel, Jquery</li>
 		<li>MVC, OOD, Rest APIs</li>
 		<li>nginx</li>
-		<li>GitHub</li>
+		<li>Git- Version Control System</li>
 		<li>Sublime Text Editor</li>
 		<li>Group Projects, Game Design, Web Application Design</li>
 	</div>	<!--end profile container-->
@@ -72,13 +72,13 @@
 
 	<div id="experiences" class="container">
 		<h2><a class="titles" href="{{{ action('PostsController@index') }}}"><strong>BLOG POSTS</strong></h2></a>
-<hr>		
+		
 		@foreach($posts as $post)
+			<p>Post Created At:	{{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS, Y @ h:i A') }}} </p>
 			<h2>
 				<a href="{{{ action('PostsController@show', ($post->title)) }}}">{{{ $post->title }}}</a>
 			</h2>
-			<p class="blogBody">{{{ $post->body }}}</p>
-			
+			<p class="blogBody">{{{ $post->body }}}</p>	
 		@endforeach
 	</div><!--end of experiences -->
 
@@ -98,12 +98,11 @@
 		<a href="http://linkedin.com/in/zeshan-segal-a987b569" target="_blank">
 			<span class="fa fa-linkedin-square"></span>				
 		</a>
-
-		<a href="mailto:zeshan.segal@gmail.com">
-			<span class="fa fa-envelope"></span>						
-		</a>
 		<a href="https://github.com/ZeshanNSegal">
 			<span class="fa fa-github-square"></span>						
+		</a>
+		<a href="mailto:zeshan.segal@gmail.com">
+			<span class="fa fa-envelope"></span>						
 		</a>
 	</div> <!-- container faIcon -->
 

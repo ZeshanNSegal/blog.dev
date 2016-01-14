@@ -32,6 +32,9 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
+		Log::info('The info was stored and logged.');
+		// Log::warning('Something could be going wrong.', Input::all());
+		// Log::error('Something is really going wrong.');
 		$post = new Post();
 		return $this->validateAndSave($post);
 	}
@@ -45,13 +48,16 @@ class PostsController extends \BaseController {
 	 */
 	public function show($idOrTitle)
 	{
+
 		if (is_numeric($idOrTitle)){
 			$post = Post::find($idOrTitle);
 		}else{
 			$idOrTitle = str_replace("-", " ", $idOrTitle);
 			$post = Post::where('title', '=', $idOrTitle)->first();
 		}
-
+		if(!$post){
+			App::abort(404);
+		}
 		return View::make('posts.show')->with('post', $post);
 	}
 
@@ -93,6 +99,7 @@ class PostsController extends \BaseController {
 	{
 		$post = Post::find($id);
 		$post->delete();
+
 		return Redirect::action('PostsController@index');
 	}
 
@@ -110,16 +117,16 @@ class PostsController extends \BaseController {
 
 				$post->title = Input::get('title');
 				$post->body = Input::get('body');
-				$post->user_id = 1;
+				$post->user_id = User::first()->id;
 
 				$result = $post->save();
 
 				if($result){
+					Session::flash('successMessage', 'Your post has been successfully saved.');
 					return Redirect::action('PostsController@index');
 				} else {
 					return Redirect::back()->withInput();
 				}	
 			}	
 	}
-
 }

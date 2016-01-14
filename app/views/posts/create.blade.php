@@ -2,20 +2,32 @@
 
 @section('content')
 
-{{ Form::open(array('action' => 'PostsController@store')) }}
+<hr>
 
-	{{ $errors->first('title', '<span class="help-block">:message</span>') }}
+<div class=('container-fluid createPost')>
+	<div class=('row')>
+		<div class=('col-md-12 createPost')>
 
-	{{ Form::label('title', 'Title') }}
-	{{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Enter blog title']) }}
+			{{ Form::open(array('action' => 'PostsController@store')) }}
 
-  	{{ Form::label('body', 'Body') }}
-	{{ Form::text('body') }}
+				{{ $errors->first('title', '<span class="help-block">:message</span>') }}
 
- 	 <input name="user_id" type="hidden" value="1">
+				{{ Form::label('title', 'Title') }}
+				{{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Enter blog title']) }}
 
-  <button type="submit" class="btn btn-warning">Submit</button>
+			  	{{ Form::label('body', 'Body') }}
+				{{ Form::text('body') }}
 
-{{ Form::close() }}
+				{{ Form::file('image_upload', array('class' => 'name')) }}
+
+			 	 <input name="user_id" type="hidden" value="1">
+
+			  	<button type="submit" class="btn btn-warning">Submit</button>
+
+			{{ Form::close() }}
+			
+		</div><!--end col-md-12-->
+	</div><!-- end row -->
+</div><!--end container-->
 
 @stop

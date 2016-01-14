@@ -1,3 +1,47 @@
+/*/////////////Borrowed CSS/////////////*/
+/* Import fonts */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
+* { 
+	margin: 0;
+	padding: 0px;
+    font-family: 'Lato', sans-serif;
+} 
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+	font-weight: bold;
+}
+
+
+::-moz-selection  {
+	color: #fff;
+	text-shadow:none;
+	background:#2B2E31;
+}
+
+::selection {
+	color: #fff;
+	text-shadow:none;
+	background:#2B2E31;
+}
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color:#696E74;
+}
+
 /*///////////master///////*/
 
 .footerLineBreak{
@@ -70,7 +114,7 @@ body{
 	margin-left: 20px;
 }
 
-/*///////////////////////////////////////////*/
+/*//////////////////BLOG.DEV/////////////////////////*/
 .backgroundImg{
 	background-image: url("/img/downtownATX.jpeg");
 	background-repeat: no-repeat;
@@ -120,10 +164,6 @@ li{
 	text-align: left;
 }
 
-.clear{
-	clear: both;
-}
-
 hr{
 	border-color: black;
 }
@@ -137,4 +177,8 @@ hr{
 
 .blogBody{
 	border-bottom-style: solid;
+}
+
+.createPost{
+	text-align: center;
 }
