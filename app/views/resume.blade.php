@@ -7,22 +7,25 @@
 			<div class="row">
 				<div class="container faIcons col-md-12">
 					{{-- <h1>Contact Me:</h1> --}}
-					<a href="http://twitter.com/ZeeSegal" target="_blank">
-					<i class="fa fa-twitter-square"></i>
+					<a href="https://github.com/ZeshanNSegal" target="_blank">
+					<span class="fa fa-github-square"></span>			
 					</a>
 					<a href="http://linkedin.com/in/zeshan-segal-a987b569" target="_blank">
 					<span class="fa fa-linkedin-square"></span>		
 					</a>
-					<a href="https://github.com/ZeshanNSegal">
-					<span class="fa fa-github-square"></span>			
-					</a>
 					<a href="mailto:zeshan.segal@gmail.com">
-					<span class="fa fa-envelope"></span>		
+					<span class="fa fa-envelope"></span>
 					</a>
+					<a href="http://twitter.com/ZeeSegal" target="_blank">
+					<span class="fa fa-twitter-square"></span>
+					</a>
+					<span class="fa fa-file-text"></span>
 				</div> <!-- container faIcon -->
 			</div> <!--end of row-->	
 		</div>
-	</div><br><br><!-- end of row -->	
+	</div><!-- end of row -->	
+
+<br><br>
 
 	<div class="row">
 		<div class="titles col-md-2"><h3>Objective</h3></div>
@@ -60,7 +63,8 @@
 				<li>Cloud Deploymet</li>
 				<li>Group Projects, Game Design, Web Application Design</li>
 <br>	
-			<span class="dates">Oct 2013 - Sept 2015 -Youth Advisor- Austin, TX</span><br>
+			<span class="dates">Oct 2013 - Sept 2015 -Youth Advisor- Austin, TX</span>
+<br>
 			<span class="experiences">Council on At-Risk Youth (CARY)</span>
 			
 				<li>Website and Social Media Management</li>
@@ -69,7 +73,8 @@
 				<li>Mentor of At-Risk Youth</li>
 				<li>Functional Behavioral & Risk Assessments</li>
 <br>					
-			<span class="dates">Aug 2008 - Oct 2013	-Manager of Education-	Dallas, TX</span><br>
+			<span class="dates">Aug 2008 - Oct 2013	-Manager of Education-	Dallas, TX</span>
+<br>
 			<span class="experiences">Trinity River Audubon Center</span>
 			
 				<li>Research and Development of Curriculum for Pre-K - 12th Grades</li>
@@ -78,12 +83,14 @@
 				<li>Grant & Budget Management</li>
 				<li>Volunteer and Intern Mentor </li>
 <br>					
-			<span class="dates">Jan 2007 - Aug 2008	-Educator- Trinity, TX</span><br>
+			<span class="dates">Jan 2007 - Aug 2008	-Educator- Trinity, TX</span>
+<br>
 			<span class="experiences">Houston Independent School District</span> 
 			
 				<li>Education & Curriculum Development</li>
 				<li>Magnet School Environmental Science Program</li>
-				<li>Project Based Learning</li><br>
+				<li>Project Based Learning</li>
+<br>
 		</div>	
 	</div> <!-- end of row -->	
 

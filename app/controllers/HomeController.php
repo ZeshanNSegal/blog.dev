@@ -31,4 +31,31 @@ class HomeController extends BaseController {
 		return View::make('hello')->with('posts', $posts);
 	}
 
+	// handleform 
+
+	public function getLogin()
+	{
+		return View::make('login');
+	}
+
+	public function postLogin()
+	{	
+		$email = Input::get('email');
+		$password = Input::get('password');
+
+		if (Auth::attempt(array('email' => $email, 'password' => $password))) {
+    		return Redirect::intended('/');
+	    } else {
+    		// login failed, go back to the login screen
+			Session::flash('errorMessage', 'Login Failed');
+			return Redirect::back()->withInput();
+		}
+	}
+
+	public function getLogout()
+	{
+		Auth::logout();
+		return Redirect::action('HomeController@showWelcome');
+	}
+
 }

@@ -8,16 +8,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link href="/css/simple-sidebar.css" rel="stylesheet">
 	<link rel="stylesheet" href="/css/blog.css"/>
-
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="/js/ie10-viewport-bug-workaround.js"></script>	
 </head>
 
 <div class="container-fluid">
 
 	<div class="pictureOpacity text-center">
 		<img src="img/zees_z.png" class="img-responsive bigZ">
-		<br>
+<br>
 		<span class="bigSentInPic hidden-sm hidden-xs">Full-Stack Web Developer</span>
 	</div> <!--end picOpacity div -->
 
@@ -92,18 +89,20 @@
 	</div><!-- end of contact -->
 
 	<div class="container faIcons col-md-12">
-		<a href="http://twitter.com/ZeeSegal" target="_blank">
-			<i class="fa fa-twitter-square"></i>
+		<a href="http://linkedin.com/in/zeshan-segal-a987b569" target="_blank">
+			<span class="fa fa-linkedin-square"></span>		
+		</a>
+		<a href="https://github.com/ZeshanNSegal" target="_blank">
+			<span class="fa fa-github-square"></span>
 		</a>
 		<a href="http://linkedin.com/in/zeshan-segal-a987b569" target="_blank">
-			<span class="fa fa-linkedin-square"></span>				
-		</a>
-		<a href="https://github.com/ZeshanNSegal">
-			<span class="fa fa-github-square"></span>						
 		</a>
 		<a href="mailto:zeshan.segal@gmail.com">
 			<span class="fa fa-envelope"></span>						
+		<a href="http://twitter.com/ZeeSegal" target="_blank">
+			<span class="fa fa-twitter-square"></span>
 		</a>
+		{{-- <span class="fa fa-file-text"></span> --}}
 	</div> <!-- container faIcon -->
 
 <hr>

@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 class Post extends Eloquent
 {
     protected $table = 'posts';
@@ -11,14 +13,15 @@ class Post extends Eloquent
     	'body'       => 'required|max:10000'
     ];
 
+    // public function setTitleAttribute($value)
+    // {
+    // 	$this->attributes['title'] = $value;
+    // 	$this->attributes['slug'] = uniqid() . '-' . Str::slug($value);
+    // }
+
     public function getCreatedAtAttribute ($value){
     	$utc = Carbon::createFromFormat($this->getDateFormat(), $value);
     	return $utc->setTimezone('America/Chicago');
-    }
-
-    public function setTitleAttribute($value){
-    	$this->attribute['title'] = $value;
-    	$this->attribute['slug'] = Str::slug($value);
     }
 
     public function user()

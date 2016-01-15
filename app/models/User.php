@@ -7,7 +7,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 use Carbon\Carbon;
 
-class User extends BaseModel implements UserInterface, RemindableInterface {
+class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
@@ -44,6 +44,6 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 
 	public function posts()
 	{
-		retrun $this->hasMany('Post');
+		return $this->hasMany('Post');
 	}
 }

@@ -7,12 +7,31 @@ class PostsController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{ 
-		$posts = Post::orderBy('updated_at', 'desc')->paginate(4);
-		return View::make('posts.index')->with('posts', $posts);	
+
+		public function __construct()
+	{
+		parent::__construct();
+		$this->beforeFilter('csrf', array('on' => array('post', 'delete', 'put')));
+		$this->beforeFilter('auth', array('except' => array('index', 'show')));
 	}
 
+	public function index()
+	{ 
+		$query = Post::with('user');
+
+		if (Input::has('search')) {
+			$query->where('title', 'like', '%title%');
+			$query->orWhere('body', 'like', '%body%');
+
+			$query->orWhereHas('user', function($q) {
+				$q->where('email', 'like', '%bee%');
+			});
+		}
+
+		$posts = $query->paginate(4);
+		// $posts = Post::with('user')->orderBy('updated_at', 'desc')->paginate(4);
+		return View::make('posts.index')->with('posts', $posts);	
+	}
 
 	/**
 	 * Show the form for creating a new resource.
@@ -23,7 +42,6 @@ class PostsController extends \BaseController {
 	{
 		return View::make('posts.create');
 	}
-
 
 	/**
 	 * Store a newly created resource in storage.
@@ -38,7 +56,6 @@ class PostsController extends \BaseController {
 		$post = new Post();
 		return $this->validateAndSave($post);
 	}
-
 
 	/**
 	 * Display the specified resource.
@@ -61,7 +78,6 @@ class PostsController extends \BaseController {
 		return View::make('posts.show')->with('post', $post);
 	}
 
-
 	/**
 	 * Show the form for editing the specified resource.
 	 *
@@ -73,7 +89,6 @@ class PostsController extends \BaseController {
 		$post = Post::find($id);
 		return View::make('posts.edit')->with('post', $post);
 	}
-
 
 	/**
 	 * Update the specified resource in storage.
@@ -87,13 +102,6 @@ class PostsController extends \BaseController {
 			$post = Post::find($id);
 			return $this->validateAndSave($post);
 	}
-
-	public function __construct()
-	{
-    	// require csrf token for all post, delete, and put actions
-    	$this->beforeFilter('csrf', array('on' => array('post', 'delete', 'put')));
-	}
-
 
 	public function destroy($id)
 	{
@@ -129,4 +137,5 @@ class PostsController extends \BaseController {
 				}	
 			}	
 	}
+	
 }

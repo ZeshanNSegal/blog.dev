@@ -50,7 +50,6 @@ a:focus {
     border-radius: 10px;
 }
 
-
 .btn-default{
 	border: 3px solid black;
 }
@@ -160,6 +159,11 @@ body{
 	text-align: center;
 }
 
+.fa-file-text:before {
+	font-size: 44px;
+    color: #337ab7;
+}
+
 li{
 	text-align: left;
 }
@@ -167,7 +171,6 @@ li{
 hr{
 	border-color: black;
 }
-
 
 /*////////////////////////////////////////*/
 

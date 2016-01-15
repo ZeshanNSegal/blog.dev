@@ -17,6 +17,9 @@
 			"app/tests/TestCase.php"
 		]
 	},
+	"require-dev": {
+		"barryvdh/laravel-debugbar":"~1.8"
+	},
 	"scripts": {
 		"post-install-cmd": [
 			"php artisan clear-compiled",

@@ -19,6 +19,11 @@ Route::get('/portfolio', 'HomeController@showPortfolio');
 
 Route::resource('/posts', 'PostsController'); //RESTful API (crud)
 
+Route::get('login', 'HomeController@getLogin');
+Route::post('login', 'HomeController@postLogin');
+Route::get('logout', 'HomeController@getLogout');
+
+
 Route::get('orm-test', function ()
 {
     $post1 = new Post();
@@ -35,7 +40,7 @@ Route::get('orm-test', function ()
 });
 
 // Route::get('/session/{value}', function($value){
-	
+
 // 	Session::put('some-key');
 
 // 	if(Session::has('some-key')) {

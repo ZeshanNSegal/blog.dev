@@ -19,7 +19,6 @@
     <!-- Custom CSS -->
     <link href="/css/simple-sidebar.css" rel="stylesheet">
     <link rel="icon" type="image/jpeg" href="img/faviconz1.jpeg">
-
     <link rel="stylesheet" href="/css/blog.css"/>
 
 @yield('top-script')
@@ -27,9 +26,7 @@
 
 <body>
 <div class="container-fluid">
-    <div id="wrapper" class="toggled">
-            
-        <!-- Sidebar -->
+    <div id="wrapper" class="toggled"><!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
@@ -56,7 +53,14 @@
                 <li>
                     <a href="#">Contact</a>
                 </li>
+                @if(!Auth::check())
+                    <li><a href="{{{ action('HomeController@getLogin') }}}">Login</a></li>
+                @else    
+                    <li><a href="{{{ action('HomeController@getLogout') }}}">Logout</a></li>
+                @endif    
+            <ul>    
             </ul>
+
         </div><!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
@@ -84,19 +88,22 @@
         <div class="row">
             <div class= "footer_container">
                 <div class="container faIcons col-md-12">
-            <a href="http://twitter.com/ZeeSegal" target="_blank">
-                <i class="fa fa-twitter-square"></i>
-            </a>
-            <a href="http://linkedin.com/in/zeshan-segal-a987b569" target="_blank">
-                <span class="fa fa-linkedin-square"></span>            
-            </a>
-            <a href="https://github.com/ZeshanNSegal">
-                <span class="fa fa-github-square"></span> 
-            </a>
-            <a href="mailto:zeshan.segal@gmail.com">
-                <span class="fa fa-envelope"></span>                
-            </a>
-        </div> <!-- container faIcon -->
+                    <a href="http://linkedin.com/in/zeshan-segal-a987b569" target="_blank">
+                        <span class="fa fa-linkedin-square"></span>            
+                    </a>
+                    <a href="https://github.com/ZeshanNSegal" target="_blank">
+                        <span class="fa fa-github-square"></span> 
+                    </a>
+                    <a href="mailto:zeshan.segal@gmail.com">
+                        <span class="fa fa-envelope"></span>                
+                    </a>
+                    <a href="http://twitter.com/ZeeSegal" target="_blank">
+                        <i class="fa fa-twitter-square"></i>
+                    </a>
+                    <span class="fa fa-file-text"></span>
+                </div> <!-- container faIcon -->
+            </div> <!--end of  class="row"-->
+        </div> <!-- end of class= "footer_container"-->        
 </footer>
 
 {{-- script tags for jquery and bootstrap go above bottom script--}}

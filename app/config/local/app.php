@@ -12,7 +12,9 @@ return array(
 	| application. If disabled, a simple generic error page is shown.
 	|
 	*/
-
+	
 	'debug' => true,
-
+	'providers' => append_config(array(
+		'Barryvdh\Debugbar\ServiceProvider',
+	))
 );
