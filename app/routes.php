@@ -23,6 +23,10 @@ Route::get('login', 'HomeController@getLogin');
 Route::post('login', 'HomeController@postLogin');
 Route::get('logout', 'HomeController@getLogout');
 
+Route::resource('tags', 'TagsController');
+
+Route::get('/contact', 'HomeController@showContact');
+Route::post('/contact', 'HomeController@postContact');
 
 Route::get('orm-test', function ()
 {

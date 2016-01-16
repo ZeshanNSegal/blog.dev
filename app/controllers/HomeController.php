@@ -58,4 +58,8 @@ class HomeController extends BaseController {
 		return Redirect::action('HomeController@showWelcome');
 	}
 
+	public function showContact()
+	{
+		return View::make('contact');
+	}
 }

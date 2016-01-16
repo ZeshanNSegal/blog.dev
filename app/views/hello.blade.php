@@ -24,6 +24,20 @@
 		<div class="overlay"></div>
 	</div>
 
+	<div id="experiences" class="container">
+		<h2><a class="titles" href="{{{ action('PostsController@index') }}}"><strong>BLOG POSTS</strong></h2></a>
+		
+		@foreach($posts as $post)
+			<p>Post Created:	{{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS, Y @ h:i A') }}} </p>
+			<h2>
+				<a href="{{{ action('PostsController@show', ($post->title)) }}}">{{{ $post->title }}}</a>
+			</h2>
+			<p class="blogBody">{{{ $post->body }}}</p>	
+		@endforeach
+	</div><!--end of experiences -->
+	
+<hr>
+
 	<div id="profile" class="container">
 		<h1><a class="titles" href="{{{ action('HomeController@showResume') }}}">Profile</a></h1>
 		<li>Linux/Ubuntu, Apache, MySQL, PHP</li>
@@ -64,20 +78,6 @@
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 		</div><!--end col-md-4-->
 	</div><!--end row-->	
-		
-<hr>
-
-	<div id="experiences" class="container">
-		<h2><a class="titles" href="{{{ action('PostsController@index') }}}"><strong>BLOG POSTS</strong></h2></a>
-		
-		@foreach($posts as $post)
-			<p>Post Created At:	{{{ $post->created_at->setTimezone('America/Chicago')->format('l, F jS, Y @ h:i A') }}} </p>
-			<h2>
-				<a href="{{{ action('PostsController@show', ($post->title)) }}}">{{{ $post->title }}}</a>
-			</h2>
-			<p class="blogBody">{{{ $post->body }}}</p>	
-		@endforeach
-	</div><!--end of experiences -->
 
 <hr>
 

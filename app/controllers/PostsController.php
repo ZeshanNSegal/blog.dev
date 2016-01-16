@@ -51,8 +51,6 @@ class PostsController extends \BaseController {
 	public function store()
 	{
 		Log::info('The info was stored and logged.');
-		// Log::warning('Something could be going wrong.', Input::all());
-		// Log::error('Something is really going wrong.');
 		$post = new Post();
 		return $this->validateAndSave($post);
 	}
@@ -68,11 +66,10 @@ class PostsController extends \BaseController {
 
 		if (is_numeric($idOrTitle)){
 			$post = Post::find($idOrTitle);
-		}else{
-			$idOrTitle = str_replace("-", " ", $idOrTitle);
-			$post = Post::where('title', '=', $idOrTitle)->first();
+		} else {
+			$post = Post::where('slug', '=', $idOrTitle)->first();
 		}
-		if(!$post){
+		if(!$post) {
 			App::abort(404);
 		}
 		return View::make('posts.show')->with('post', $post);
@@ -125,6 +122,16 @@ class PostsController extends \BaseController {
 
 				$post->title = Input::get('title');
 				$post->body = Input::get('body');
+				
+				if (Input::hasFile('image_upload'))
+				{
+					$file = Input::file('image_upload');
+					$fileName = $file->getClientOriginalName();
+					$destinationPath = 'img/upload/';
+					$file->move($destinationPath, $fileName);
+					$post->image_upload = $destinationPath . $fileName;
+				}
+   
 				$post->user_id = User::first()->id;
 
 				$result = $post->save();
