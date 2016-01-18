@@ -28,6 +28,8 @@ Route::resource('tags', 'TagsController');
 Route::get('/contact', 'HomeController@showContact');
 Route::post('/contact', 'HomeController@postContact');
 
+Route::get('/email-sent-successfully', 'HomeController@emailSentPage');
+
 Route::get('orm-test', function ()
 {
     $post1 = new Post();
