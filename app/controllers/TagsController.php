@@ -1,6 +1,6 @@
 <?php
 
-class TagsController extends \BaseController {
+class TagsController extends BaseController {
 
 	/**
 	 * Display a listing of tags
