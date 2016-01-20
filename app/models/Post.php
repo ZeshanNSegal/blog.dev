@@ -11,7 +11,6 @@ class Post extends Eloquent
     public static $rules = [
     	'title'      => 'required|max:100',
     	'body'       => 'required|max:10000',
-    	// 'image_upload' => 'image|max:2000'
     ];
 
     public function setTitleAttribute($value)

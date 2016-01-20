@@ -19,7 +19,7 @@
 					<a href="http://twitter.com/ZeeSegal" target="_blank">
 					<span class="fa fa-twitter-square"></span>
 					</a>
-					<span class="fa fa-file-text"></span>
+					{{-- <span class="fa fa-file-text"></span> --}}
 				</div> <!-- container faIcon -->
 			</div> <!--end of row-->	
 		</div>

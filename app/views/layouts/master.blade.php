@@ -25,55 +25,25 @@
 </head>
 
 <body>
-<div class="container-fluid">
-    <div id="wrapper" class="toggled"><!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="/">HOME PAGE</a>
-                </li>
-                <li>
-                    <a href="/resume">RESUME</a>
-                </li>
-                <li>
-                    <a href="/portfolio">PORTFOLIO</a>
-                </li>
-                <li>
-                    <a href="/blog">BLOG</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-                @if(!Auth::check())
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Zee's Blog</a>
+    </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/">HOME</a></li>
+          <li><a href="/resume">RESUME</a></li>
+          <li><a href="/portfolio">PORTFOLIO</a></li> 
+          <li><a href="/posts">BLOG</a></li> 
+              @if(!Auth::check())
                     <li><a href="{{{ action('HomeController@getLogin') }}}">Login</a></li>
                 @else    
                     <li><a href="{{{ action('HomeController@getLogout') }}}">Logout</a></li>
-                @endif    
-            <ul>    
-            </ul>
-
-        </div><!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-    <div class="container-fluid">
-    <div class="row">
-    <div class="col-lg-12">
-    <div>                        
-        <div>
-            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
-        </div><!-- /#page-content-wrapper -->
-    </div><!-- /#wrapper -->
-</div> <!-- end container-fluid--> 
+                @endif       
+        </ul>
+    </div> <!-- end container-fluid--> 
+</nav>
 
     @if (Session::has('successMessage'))
         <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
@@ -100,7 +70,7 @@
                     <a href="http://twitter.com/ZeeSegal" target="_blank">
                         <i class="fa fa-twitter-square"></i>
                     </a>
-                    <span class="fa fa-file-text"></span>
+                   {{--  <span class="fa fa-file-text"></span> --}}
                 </div> <!-- container faIcon -->
             </div> <!--end of  class="row"-->
         </div> <!-- end of class= "footer_container"-->        

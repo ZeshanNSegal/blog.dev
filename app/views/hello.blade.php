@@ -23,6 +23,7 @@
 		<div class="container lead"></div>
 		<div class="overlay"></div>
 	</div>
+</div> <!--end container-fluid-->	
 
 	<div id="experiences" class="container">
 		<h2><a class="titles" href="{{{ action('PostsController@index') }}}"><strong>BLOG POSTS</strong></h2></a>
@@ -38,24 +39,9 @@
 	
 <hr>
 
-	<div id="profile" class="container">
-		<h1><a class="titles" href="{{{ action('HomeController@showResume') }}}">Profile</a></h1>
-		<li>Linux/Ubuntu, Apache, MySQL, PHP</li>
-		<li>HTML, CSS, JavaScript</li>
-		<li>Laravel, Jquery</li>
-		<li>MVC, OOD, Rest APIs</li>
-		<li>nginx</li>
-		<li>Git- Version Control System</li>
-		<li>Sublime Text Editor</li>
-		<li>Group Projects, Game Design, Web Application Design</li>
-	</div>	<!--end profile container-->
-</div> <!--end container-fluid-->	
-
-<hr>
-
 	<div class="row">
 		<div class="col-md-4 aboutMe">
-			<h3 class="titles">About me</h3>
+			<h2><a class="titles" href="{{{ action('HomeController@showResume') }}}"><strong>ABOUT ME</strong></h2></a>
 			<p>
 				Hey there! I am an all around web developer, focused on object-oriented design. As a junior programmer, I have a good working knowledge of the LAMP Stack. Currently, I am working with Linux/Ubuntu, Apache, PHP, MySQL, and Laravel on the back end. On the front end, I am using HTML, CSS, and JavaScript. Some of my experience includes working on the nginix platform, Model-View-Controller frameworks, REST APIs, AJAX requests, Sublime Text-Editor, and Terminal. I also have experience working with mapping and ArcGIS software. You can see all of my work on <strong><a href="https://github.com/ZeshanNSegal">GitHub</a></strong>, or just click 'About Me' to see my portfolio.		
 			</p>
@@ -79,6 +65,19 @@
 		</div><!--end col-md-4-->
 	</div><!--end row-->	
 
+<hr>
+
+	<div id="profile" class="container">
+		<h1><a class="titles" href="{{{ action('HomeController@showResume') }}}">Profile</a></h1>
+		<li>Linux/Ubuntu, Apache, MySQL, PHP</li>
+		<li>HTML, CSS, JavaScript</li>
+		<li>Laravel, Jquery</li>
+		<li>MVC, OOD, Rest APIs</li>
+		<li>nginx</li>
+		<li>Git- Version Control System</li>
+		<li>Sublime Text Editor</li>
+		<li>Group Projects, Game Design, Web Application Design</li>
+	</div>	<!--end profile container-->
 <hr>
 
 	<div id="contact" class="container">
