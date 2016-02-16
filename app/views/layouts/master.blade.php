@@ -58,10 +58,10 @@
         <div class="row">
             <div class= "footer_container">
                 <div class="container faIcons col-md-12">
-                    <a href="http://linkedin.com/in/zeshan-segal-a987b569" target="_blank">
+                    <a href="http://www.linkedin.com/in/zeshan-n-segal-a987b569" target="_blank">
                         <span class="fa fa-linkedin-square"></span>            
                     </a>
-                    <a href="https://github.com/ZeshanNSegal" target="_blank">
+                    <a href="http://github.com/ZeshanNSegal" target="_blank">
                         <span class="fa fa-github-square"></span> 
                     </a>
                     <a href="mailto:zeshan.segal@gmail.com">
